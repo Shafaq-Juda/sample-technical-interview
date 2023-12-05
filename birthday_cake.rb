@@ -29,16 +29,22 @@ class BirthdayCake
   return self.lit = true
   end
 
-  def lighting_candles
-    return "Lighting candles...\nBirthday cake with #{self.age} lit candles"
-  end
-
   def candles_status
     if self.lit == true
       return "lit"
     else
       return "blown out"
     end
+  end
+
+  def light_candles
+    self.lit = true
+    candles_status
+  end
+
+  def blow_out_candles
+    self.lit = false
+    candles_status
   end
 
   def greet
@@ -57,13 +63,13 @@ class BirthdayCake
     birthday_cake = BirthdayCake.new(age)
     puts birthday_cake.greet
     puts birthday_cake.to_s
-    puts birthday_cake.lighting_candles
-   # birthday_cake.candles_status
-   # puts birthday_cake.to_s
+    puts "Lighting candles..."
+    birthday_cake.light_candles
+    puts birthday_cake.to_s
     puts "Singing happy birthday..."
     puts birthday_cake.sing
     puts "Blowing out candles..."
-    # birthday_cake.candles_status
+    birthday_cake.blow_out_candles
     puts birthday_cake.to_s
 
     birthday_cake
