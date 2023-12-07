@@ -39,12 +39,12 @@ class BirthdayCake
 
   def light_candles
     self.lit = true
-    candles_status
+    return candles_status
   end
 
   def blow_out_candles
     self.lit = false
-    candles_status
+    return candles_status
   end
 
   def greet
